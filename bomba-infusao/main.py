@@ -2,7 +2,7 @@
 Modulo para inicialização e disponilibilização do serviço
 relacionado à bomba de infusão de medicamentos.
 """
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from bomba_infusao import BombaDeInfusao
 
 app = FastAPI()
@@ -30,12 +30,12 @@ def set_medicamentos(medicamentos: str, quantidade: float):
     return {"message": "Medicamentos atualizados com sucesso"}
 
 @app.get("/taxa/{medicamento}")
-def get_medicamentos(medicamento: str):
+def get_taxa_medicamentos(medicamento: str):
     """Metodo para roteamento para recuperar a quantidade de um medicamento"""
     return bomba.get_quantidade(medicamento)
 
 @app.put("/taxa/{medicamento}/{taxa}")
-def set_medicamentos(medicamentos: str, quantidade: float):
+def set_taxa_medicamentos(medicamentos: str, quantidade: float):
     """Metodo para roteamento para setar a quandidade de um medicamento"""
     bomba.set_quantidade(medicamentos, quantidade)
     return {"message": "Medicamentos atualizados com sucesso"}
