@@ -1,12 +1,9 @@
-
-"""
-Class related to the UTI component called Bomba de Infusão.
-"""
 class BombaDeInfusao:
     """
-    Init method setting up attributes for bomba de infusao.
+    Class related to the UTI component called Bomba de Infusão.
     """
     def __init__(self):
+        """Init method setting up attributes for bomba de infusao."""
         self.qtd_med1 = 0
         self.qtd_med2 = 0
         self.qtd_soro = 0
@@ -15,10 +12,11 @@ class BombaDeInfusao:
         self.taxa_soro = 0
         self.ligado = False
 
-    """
-    Method used to update quantity of the medicine being administrated to the patient
-    """
     def set_quantidade(self, medicamento, quantidade):
+        """
+        Method used to update quantity of the medicine being 
+        administrated to the patient
+        """
         if medicamento == 'med1':
             self.qtd_med1 = quantidade
         elif medicamento == 'med2':
