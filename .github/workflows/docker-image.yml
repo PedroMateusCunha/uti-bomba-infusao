@@ -17,5 +17,6 @@ jobs:
     - name: Build the Docker image
       run: |
         cd ..
+        ls -la
         pwd
         docker build . --file Dockerfile --tag my-image-name:$(date +%s)
