@@ -3,6 +3,9 @@
 Class related to the UTI component called Bomba de Infusão.
 """
 class BombaDeInfusao:
+    """
+    Init method setting up attributes for bomba de infusao.
+    """
     def __init__(self):
         self.qtd_med1 = 0
         self.qtd_med2 = 0
