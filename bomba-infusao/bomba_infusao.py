@@ -15,6 +15,9 @@ class BombaDeInfusao:
         self.taxa_soro = 0
         self.ligado = False
 
+    """
+    Method used to update quantity of the medicine being administrated to the patient
+    """
     def set_quantidade(self, medicamento, quantidade):
         if medicamento == 'med1':
             self.qtd_med1 = quantidade
