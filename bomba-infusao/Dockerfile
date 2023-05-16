@@ -14,6 +14,8 @@ WORKDIR $USER_HOME
 COPY . .
 
 RUN python3 -m pip install --upgrade pip && \
-    pip install -r ${USER_HOME}/bomba-infusao/requirements/requirements.${ENV_NAME}.txt && \
-    cd bomba-infusao
+    pip install -r ${USER_HOME}/bomba-infusao/requirements/requirements.${ENV_NAME}.txt &&
+
+WORKDIR ${USER_HOME}/bomba-infusao/
+
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000","--reload"]
