@@ -13,7 +13,6 @@ WORKDIR $USER_HOME
 
 COPY . .
 
-RUN ls -la; ls -la requirements
 RUN python3 -m pip install --upgrade pip && \
     pip install -r ${USER_HOME}/bomba-infusao/requirements/requirements.${ENV_NAME}.txt
 
