@@ -8,6 +8,10 @@ bomba = BombaDeInfusao()
 def read_root():
     return {"message": "Bomba de infusão"}
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 @app.get("/status")
 def check_status():
     return bomba.get_status()
@@ -22,11 +26,11 @@ def set_medicamentos(medicamentos: str, quantidade: float):
     return {"message": "Medicamentos atualizados com sucesso"}
 
 @app.get("/taxa/{medicamento}")
-def get_medicamentos(medicamento: str):
+def get_taxas(medicamento: str):
     return bomba.get_quantidade(medicamento)
 
 @app.put("/taxa/{medicamento}/{taxa}")
-def set_medicamentos(medicamentos: str, quantidade: float):
+def set_taxas(medicamentos: str, quantidade: float):
     bomba.set_quantidade(medicamentos, quantidade)
     return {"message": "Medicamentos atualizados com sucesso"}
 
