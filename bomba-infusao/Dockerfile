@@ -14,7 +14,7 @@ WORKDIR $USER_HOME
 COPY . .
 
 RUN python3 -m pip install --upgrade pip && \
-    pip install -r ${USER_HOME}/bomba-infusao/requirements/requirements.${ENV_NAME}.txt &&
+    pip install -r ${USER_HOME}/bomba-infusao/requirements/requirements.${ENV_NAME}.txt
 
 WORKDIR ${USER_HOME}/bomba-infusao/
 
